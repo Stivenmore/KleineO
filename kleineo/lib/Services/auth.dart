@@ -20,6 +20,15 @@ class AuthService {
     }
   }
 
+  Future<void> getDataUser(
+      Function(DocumentSnapshot userDocument) onState) async {
+    await _auth.authStateChanges().listen((event) async {
+      final response =
+          await _firestore.collection('Users').doc(event.uid).get();
+      onState(response);
+    });
+  }
+
   bool get isAuth => _auth.currentUser != null && _auth.currentUser.uid != null;
 
   Future signOut() async {

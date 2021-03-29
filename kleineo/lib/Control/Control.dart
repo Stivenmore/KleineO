@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kleineo/Pages/Authentication/Door.dart';
-import 'package:kleineo/Pages/Home/Home.dart';
+import 'package:kleineo/Pages/In/In.dart';
 import 'package:kleineo/Services/auth.dart';
 class Control extends StatelessWidget {
   const Control({Key key}) : super(key: key);
@@ -14,7 +14,7 @@ class Control extends StatelessWidget {
 
   controlX() {
     if (AuthService().isAuth == true) {
-      return Home();
+      return In();
     } else {
       return Door();
     }

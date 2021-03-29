@@ -16,6 +16,7 @@ class _DoorState extends State<Door> {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: [
@@ -24,19 +25,16 @@ class _DoorState extends State<Door> {
             height: size.height * 0.03,
           ),
           Text(
-            'La direccion correcta\n para ir de compras\n en internet',
+            'La dirección correcta\n para ir de compras\n en internet',
             textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-                fontFamily: 'Oswald'),
+            style: Theme.of(context).textTheme.headline6,
           ),
           SizedBox(
             height: size.height * 0.04,
           ),
           Text(
             '¡Ahora es muy fácil alcanzar la mejor\n calidad entre todos los productos\n en Internet!',
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            style: Theme.of(context).textTheme.headline5,
             textAlign: TextAlign.center,
           ),
           SizedBox(
@@ -74,7 +72,7 @@ class _DoorState extends State<Door> {
           ),
           GestureDetector(
             onTap: () => Navigator.pushNamed(context, 'forgot', arguments: routes),
-            child: Center(child: Text('Olvidaste tu contraseña?', style: TextStyle(fontSize: 16, fontFamily: 'Oswald'),)),
+            child: Center(child: Text('¿Olvidaste tu contraseña?', style: Theme.of(context).textTheme.headline4,)),
           )
         ],
       ),

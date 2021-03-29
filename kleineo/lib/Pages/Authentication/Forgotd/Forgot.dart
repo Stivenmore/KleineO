@@ -19,14 +19,14 @@ class _ForgotState extends State<Forgot> {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
           onPressed: () => Navigator.pop(context),
-          color: Colors.black,
+          color: Theme.of(context).iconTheme.color
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0.0,
       ),
       body: ListView(
@@ -39,7 +39,7 @@ class _ForgotState extends State<Forgot> {
           Column(
             children: [
               Text('Por favor ingrese el correo con el cual se registro\n en nuestra App para enviarle un mensaje donde\n podra restablecer su contraseña',
-              style: TextStyle(fontFamily: 'Oswald', fontSize: 17), textAlign: TextAlign.center,),
+              style: Theme.of(context).textTheme.headline3),
               SizedBox(height: size.height *0.02,),
               InputText(
                 onChanged: (value) {

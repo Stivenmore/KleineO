@@ -22,15 +22,16 @@ class _InputTextState extends State<InputText> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: TextFormField(
+        style: Theme.of(context).textTheme.headline4,
         onChanged: widget.onChanged,
         validator: widget.validate,
         decoration: InputDecoration(
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16),
-                borderSide: BorderSide(color: Colors.white)),
-            hintStyle: TextStyle(color: Colors.white),
+            border: Theme.of(context).inputDecorationTheme.border,
+            hintStyle: Theme.of(context).textTheme.headline4,
             labelText: widget.labelText,
-            helperText: widget.helperText),
+            labelStyle: Theme.of(context).textTheme.headline4,
+            helperText: widget.helperText,
+            helperStyle: Theme.of(context).textTheme.headline4),
       ),
     );
   }

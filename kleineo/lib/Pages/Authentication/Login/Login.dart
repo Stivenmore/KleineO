@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kleineo/Pages/Authentication/Widgets/Buttom1.dart';
 import 'package:kleineo/Pages/Authentication/Widgets/DoorImage.dart';
 import 'package:kleineo/Pages/Authentication/Widgets/InputText.dart';
-import 'package:kleineo/Pages/Home/Home.dart';
+import 'package:kleineo/Pages/In/In.dart';
 import 'package:kleineo/Services/auth.dart';
 
 class Login extends StatefulWidget {
@@ -20,14 +20,14 @@ class _LoginState extends State<Login> {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
+          icon: Icon(Icons.arrow_back_ios, color: Theme.of(context).iconTheme.color,),
           onPressed: () => Navigator.pop(context),
-          color: Colors.black,
+          color: Theme.of(context).iconTheme.color,
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0.0,
       ),
       body: ListView(
@@ -71,7 +71,7 @@ class _LoginState extends State<Login> {
                     final dynamic resp = await AuthService().signIn(email, password);
                     if (resp == true) {
                       Navigator.pushAndRemoveUntil(
-                          context, MaterialPageRoute(builder: (context) => Home(),), (route) => false);
+                          context, MaterialPageRoute(builder: (context) => In(),), (route) => false);
                     } else {
                       return showDialog(
                           context: context,

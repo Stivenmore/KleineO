@@ -20,14 +20,14 @@ class _RegisterState extends State<Register> {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
+          icon: Icon(Icons.arrow_back_ios, color: Theme.of(context).iconTheme.color,),
           onPressed: () => Navigator.pop(context),
-          color: Colors.black,
+          color: Theme.of(context).iconTheme.color,
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0.0,
       ),
       body: ListView(
